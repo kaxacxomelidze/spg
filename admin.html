@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPG Admin</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <img src="assets/logo.svg" alt="SPG logo" />
+        <nav class="nav-links">
+          <a href="main.html" data-i18n="admin.nav.portal">Portal</a>
+          <a href="#" data-i18n="admin.nav.admins">Admins</a>
+          <a href="#" data-i18n="admin.nav.posts">Posts</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="language-toggle" type="button" id="languageToggle">EN / GE</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-layout">
+      <h1 data-i18n="admin.title">Admin Console</h1>
+      <p data-i18n="admin.subtitle">
+        Manage administrators and publish posts that appear on the portal homepage.
+      </p>
+
+      <section class="card-grid" style="margin-top: 24px;">
+        <div class="panel-card">
+          <h2 data-i18n="admin.manageAdmins">Manage admins</h2>
+          <span class="pill" data-i18n="admin.adminsLabel">Current admins</span>
+          <div class="list" id="adminList"></div>
+          <form id="adminForm">
+            <input type="text" name="name" data-i18n-placeholder="admin.adminName" placeholder="Admin name" required />
+            <input type="email" name="email" data-i18n-placeholder="admin.adminEmail" placeholder="Admin email" required />
+            <button class="btn primary" type="submit" data-i18n="admin.addAdmin">Add admin</button>
+          </form>
+        </div>
+        <div class="panel-card">
+          <h2 data-i18n="admin.managePosts">Create posts</h2>
+          <span class="pill" data-i18n="admin.postsLabel">Published posts</span>
+          <div class="list" id="postList"></div>
+          <form id="postForm">
+            <input type="text" name="title" data-i18n-placeholder="admin.postTitle" placeholder="Post title" required />
+            <textarea name="body" data-i18n-placeholder="admin.postBody" placeholder="Write the post summary..." required></textarea>
+            <button class="btn primary" type="submit" data-i18n="admin.addPost">Publish post</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/logo.svg" alt="SPG logo" />
+            <p data-i18n="footer.description">
+              A modern hub for your service portal, connecting teams with clear updates.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.company">Company</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.about">About</a></li>
+              <li><a href="#" data-i18n="footer.careers">Careers</a></li>
+              <li><a href="#" data-i18n="footer.press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.resources">Resources</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="#" data-i18n="footer.guides">Guides</a></li>
+              <li><a href="#" data-i18n="footer.support">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.legal">Legal</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.privacy">Privacy</a></li>
+              <li><a href="#" data-i18n="footer.terms">Terms</a></li>
+              <li><a href="#" data-i18n="footer.security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copy">© 2024 SPG Portal. All rights reserved.</span>
+          <span data-i18n="footer.contact">hello@spg-portal.com</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>
