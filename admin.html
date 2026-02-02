@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPG Admin</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="siteHeader">
+      <div class="headerTopGlow"></div>
+
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <div class="topbar__left">
+            <span class="pill" data-i18n="topbar.phone">📞 +995 591 037 047</span>
+            <a class="pill" href="mailto:info@spg.ge" data-i18n="topbar.email">✉️ info@spg.ge</a>
+            <span class="pill" data-i18n="topbar.address">📍 ჟიულ შარტავას 35-37, თბილისი</span>
+          </div>
+
+          <div class="lang" aria-label="Language">
+            <button class="active" type="button" data-lang="ka">KA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="brandbar">
+        <div class="container brandbar__inner">
+          <div class="leftActions">
+            <a class="btn signin" href="main.html#signin" data-i18n="header.signin">🔐 Sign in</a>
+          </div>
+
+          <a class="brand" href="main.html#home" aria-label="Home">
+            <img class="logoImg" src="assets/logo.svg" alt="SPG Logo" />
+          </a>
+
+          <div class="actions">
+            <a class="btn ghost" href="main.html#contact" data-i18n="header.contactCta">მოგვწერე</a>
+            <a class="btn primary" href="main.html#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+            <button class="btn burger" id="burger" type="button" aria-label="Open menu">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <div class="container navbar__inner">
+          <nav class="nav" aria-label="Main">
+            <a class="active" href="main.html#home" data-i18n="nav.home">მთავარი</a>
+            <a href="main.html#news" data-i18n="nav.news">სიახლეები</a>
+
+            <div class="drop" data-drop="about">
+              <button type="button">
+                <span data-i18n="nav.about">ჩვენს შესახებ</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="main.html#about-history" data-i18n="nav.aboutHistory">ისტორია</a>
+                <a href="main.html#about-mission" data-i18n="nav.aboutMission">მისია</a>
+                <a href="main.html#about-vision" data-i18n="nav.aboutVision">ხედვა</a>
+                <a href="main.html#about-structure" data-i18n="nav.aboutStructure">სტრუქტურა</a>
+                <a href="main.html#about-career" data-i18n="nav.aboutCareer">კარიერული განვითარების გეგმა</a>
+                <a href="main.html#about-message" data-i18n="nav.aboutMessage">ხელმძღვანელის მიმართვა</a>
+              </div>
+            </div>
+
+            <div class="drop" data-drop="team">
+              <button type="button">
+                <span data-i18n="nav.team">გუნდი</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="main.html#team-pr" data-i18n="nav.teamPr">PR &amp; EVENT</a>
+                <a href="main.html#team-aparati" data-i18n="nav.teamAparati">აპარატი</a>
+                <a href="main.html#team-parlament" data-i18n="nav.teamParlament">სტუდენტური პარლამენტი</a>
+                <a href="main.html#team-gov" data-i18n="nav.teamGov">სტუდენტური მთავრობა</a>
+              </div>
+            </div>
+
+            <a href="main.html#contact" data-i18n="nav.contact">კონტაქტი</a>
+          </nav>
+        </div>
+
+        <div class="container mobile" id="mobile">
+          <a href="main.html#home" data-i18n="nav.home">მთავარი</a>
+          <a href="main.html#news" data-i18n="nav.news">სიახლეები</a>
+          <a href="main.html#about-history" data-i18n="nav.about">ჩვენს შესახებ</a>
+          <a href="main.html#team-pr" data-i18n="nav.team">გუნდი</a>
+          <a href="main.html#contact" data-i18n="nav.contact">კონტაქტი</a>
+          <a href="main.html#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+          <a href="main.html#signin" data-i18n="header.signin">Sign in</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-layout">
+      <h1 data-i18n="admin.title">Admin Console</h1>
+      <p data-i18n="admin.subtitle">
+        Manage administrators and publish posts that appear on the portal homepage.
+      </p>
+
+      <section class="card-grid" style="margin-top: 24px;">
+        <div class="panel-card">
+          <h2 data-i18n="admin.manageAdmins">Manage admins</h2>
+          <span class="pill" data-i18n="admin.adminsLabel">Current admins</span>
+          <div class="list" id="adminList"></div>
+          <form id="adminForm">
+            <input type="text" name="name" data-i18n-placeholder="admin.adminName" placeholder="Admin name" required />
+            <input type="email" name="email" data-i18n-placeholder="admin.adminEmail" placeholder="Admin email" required />
+            <button class="btn primary" type="submit" data-i18n="admin.addAdmin">Add admin</button>
+          </form>
+        </div>
+        <div class="panel-card">
+          <h2 data-i18n="admin.managePosts">Create posts</h2>
+          <span class="pill" data-i18n="admin.postsLabel">Published posts</span>
+          <div class="list" id="postList"></div>
+          <form id="postForm">
+            <input type="text" name="title" data-i18n-placeholder="admin.postTitle" placeholder="Post title" required />
+            <textarea name="body" data-i18n-placeholder="admin.postBody" placeholder="Write the post summary..." required></textarea>
+            <button class="btn primary" type="submit" data-i18n="admin.addPost">Publish post</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/logo.svg" alt="SPG logo" />
+            <p data-i18n="footer.description">
+              A modern hub for your service portal, connecting teams with clear updates.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.company">Company</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.about">About</a></li>
+              <li><a href="#" data-i18n="footer.careers">Careers</a></li>
+              <li><a href="#" data-i18n="footer.press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.resources">Resources</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="#" data-i18n="footer.guides">Guides</a></li>
+              <li><a href="#" data-i18n="footer.support">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.legal">Legal</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.privacy">Privacy</a></li>
+              <li><a href="#" data-i18n="footer.terms">Terms</a></li>
+              <li><a href="#" data-i18n="footer.security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copy">© 2024 SPG Portal. All rights reserved.</span>
+          <span data-i18n="footer.contact">hello@spg-portal.com</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

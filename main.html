@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPG Portal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="siteHeader">
+      <div class="headerTopGlow"></div>
+
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <div class="topbar__left">
+            <span class="pill" data-i18n="topbar.phone">📞 +995 591 037 047</span>
+            <a class="pill" href="mailto:info@spg.ge" data-i18n="topbar.email">✉️ info@spg.ge</a>
+            <span class="pill" data-i18n="topbar.address">📍 ჟიულ შარტავას 35-37, თბილისი</span>
+          </div>
+
+          <div class="lang" aria-label="Language">
+            <button class="active" type="button" data-lang="ka">KA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="brandbar">
+        <div class="container brandbar__inner">
+          <div class="leftActions">
+            <a class="btn signin" href="#signin" data-i18n="header.signin">🔐 Sign in</a>
+          </div>
+
+          <a class="brand" href="#home" aria-label="Home">
+            <img class="logoImg" src="assets/logo.svg" alt="SPG Logo" />
+          </a>
+
+          <div class="actions">
+            <a class="btn ghost" href="#contact" data-i18n="header.contactCta">მოგვწერე</a>
+            <a class="btn primary" href="#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+            <button class="btn burger" id="burger" type="button" aria-label="Open menu">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <div class="container navbar__inner">
+          <nav class="nav" aria-label="Main">
+            <a class="active" href="#home" data-i18n="nav.home">მთავარი</a>
+            <a href="#news" data-i18n="nav.news">სიახლეები</a>
+
+            <div class="drop" data-drop="about">
+              <button type="button">
+                <span data-i18n="nav.about">ჩვენს შესახებ</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="#about-history" data-i18n="nav.aboutHistory">ისტორია</a>
+                <a href="#about-mission" data-i18n="nav.aboutMission">მისია</a>
+                <a href="#about-vision" data-i18n="nav.aboutVision">ხედვა</a>
+                <a href="#about-structure" data-i18n="nav.aboutStructure">სტრუქტურა</a>
+                <a href="#about-career" data-i18n="nav.aboutCareer">კარიერული განვითარების გეგმა</a>
+                <a href="#about-message" data-i18n="nav.aboutMessage">ხელმძღვანელის მიმართვა</a>
+              </div>
+            </div>
+
+            <div class="drop" data-drop="team">
+              <button type="button">
+                <span data-i18n="nav.team">გუნდი</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="#team-pr" data-i18n="nav.teamPr">PR &amp; EVENT</a>
+                <a href="#team-aparati" data-i18n="nav.teamAparati">აპარატი</a>
+                <a href="#team-parlament" data-i18n="nav.teamParlament">სტუდენტური პარლამენტი</a>
+                <a href="#team-gov" data-i18n="nav.teamGov">სტუდენტური მთავრობა</a>
+              </div>
+            </div>
+
+            <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
+          </nav>
+        </div>
+
+        <div class="container mobile" id="mobile">
+          <a href="#home" data-i18n="nav.home">მთავარი</a>
+          <a href="#news" data-i18n="nav.news">სიახლეები</a>
+          <a href="#about-history" data-i18n="nav.about">ჩვენს შესახებ</a>
+          <a href="#team-pr" data-i18n="nav.team">გუნდი</a>
+          <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
+          <a href="#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+          <a href="#signin" data-i18n="header.signin">Sign in</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="tag" data-i18n="hero.tag">New updates</span>
+          <h1 data-i18n="hero.title">Build your service portal in minutes.</h1>
+          <p data-i18n="hero.subtitle">
+            Manage announcements, publish posts, and keep your team aligned with a bilingual
+            experience tailored for your community.
+          </p>
+          <button class="btn primary" data-i18n="hero.cta">Explore updates</button>
+        </div>
+        <div class="hero-card">
+          <h2 class="section-title" data-i18n="hero.cardTitle">Latest activity</h2>
+          <p data-i18n="hero.cardBody">
+            Admins can add posts and manage leadership updates directly from the admin dashboard.
+          </p>
+          <span class="pill" data-i18n="hero.adminsLabel">Active admins</span>
+          <div class="list" id="adminList"></div>
+        </div>
+      </section>
+
+      <section class="posts">
+        <h2 class="section-title" data-i18n="posts.title">Recent posts</h2>
+        <div class="post-grid" id="postGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/logo.svg" alt="SPG logo" />
+            <p data-i18n="footer.description">
+              A modern hub for your service portal, connecting teams with clear updates.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.company">Company</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.about">About</a></li>
+              <li><a href="#" data-i18n="footer.careers">Careers</a></li>
+              <li><a href="#" data-i18n="footer.press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.resources">Resources</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="#" data-i18n="footer.guides">Guides</a></li>
+              <li><a href="#" data-i18n="footer.support">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.legal">Legal</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.privacy">Privacy</a></li>
+              <li><a href="#" data-i18n="footer.terms">Terms</a></li>
+              <li><a href="#" data-i18n="footer.security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copy">© 2024 SPG Portal. All rights reserved.</span>
+          <span data-i18n="footer.contact">hello@spg-portal.com</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
