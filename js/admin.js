@@ -17,6 +17,9 @@ const translations = {
         teamParlament: "Student parliament",
         teamGov: "Student government",
         contact: "Contact",
+        portal: "Portal",
+        admins: "Admins",
+        posts: "Posts",
       },
       title: "Admin Console",
       subtitle: "Manage administrators and publish posts that appear on the portal homepage.",
@@ -83,6 +86,9 @@ const translations = {
         teamParlament: "სტუდენტური პარლამენტი",
         teamGov: "სტუდენტური მთავრობა",
         contact: "კონტაქტი",
+        portal: "პორტალი",
+        admins: "ადმინები",
+        posts: "პოსტები",
       },
       title: "ადმინისტრაციული პანელი",
       subtitle: "მართეთ ადმინისტრატორები და გამოაქვეყნეთ პოსტები პორტალზე.",
@@ -148,6 +154,7 @@ const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile");
 const drops = Array.from(document.querySelectorAll(".drop"));
 const header = document.getElementById("siteHeader");
+const languageToggle = document.getElementById("languageToggle");
 
 const getStored = (key, fallback) => {
   try {
@@ -377,5 +384,13 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+languageToggle?.addEventListener("click", () => {
+  const current = localStorage.getItem(STORAGE_KEYS.language) || "en";
+  const next = current === "en" ? "ka" : "en";
+  setLanguage(next);
+  renderAdmins(next);
+  renderPosts(next);
+});
 
 initialize();

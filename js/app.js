@@ -26,6 +26,11 @@ const translations = {
       signin: "🔐 Sign in",
       contactCta: "Contact us",
       registerCta: "Register",
+      services: "Services",
+      community: "Community",
+      admin: "Admin",
+      signin: "Sign In",
+      getStarted: "Get Started",
     },
     hero: {
       tag: "New updates",
@@ -97,6 +102,11 @@ const translations = {
       signin: "🔐 Sign in",
       contactCta: "მოგვწერე",
       registerCta: "რეგისტრაცია",
+      services: "სერვისები",
+      community: "საზოგადოება",
+      admin: "ადმინი",
+      signin: "შესვლა",
+      getStarted: "დაწყება",
     },
     hero: {
       tag: "ახალი განახლებები",
@@ -156,6 +166,9 @@ const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile");
 const drops = Array.from(document.querySelectorAll(".drop"));
 const header = document.getElementById("siteHeader");
+const languageToggle = document.getElementById("languageToggle");
+const adminList = document.getElementById("adminList");
+const postGrid = document.getElementById("postGrid");
 
 const getStored = (key, fallback) => {
   try {
@@ -296,5 +309,13 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+languageToggle?.addEventListener("click", () => {
+  const current = localStorage.getItem(STORAGE_KEYS.language) || "en";
+  const next = current === "en" ? "ka" : "en";
+  setLanguage(next);
+  renderAdmins(next);
+  renderPosts(next);
+});
 
 initialize();
