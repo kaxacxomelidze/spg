@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPG Portal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <img src="assets/logo.svg" alt="SPG logo" />
+        <nav class="nav-links">
+          <a href="#" data-i18n="nav.home">Home</a>
+          <a href="#" data-i18n="nav.services">Services</a>
+          <a href="#" data-i18n="nav.community">Community</a>
+          <a href="admin.html" data-i18n="nav.admin">Admin</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="language-toggle" type="button" id="languageToggle">EN / GE</button>
+          <button class="btn" data-i18n="nav.signin">Sign In</button>
+          <button class="btn primary" data-i18n="nav.getStarted">Get Started</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="tag" data-i18n="hero.tag">New updates</span>
+          <h1 data-i18n="hero.title">Build your service portal in minutes.</h1>
+          <p data-i18n="hero.subtitle">
+            Manage announcements, publish posts, and keep your team aligned with a bilingual
+            experience tailored for your community.
+          </p>
+          <button class="btn primary" data-i18n="hero.cta">Explore updates</button>
+        </div>
+        <div class="hero-card">
+          <h2 class="section-title" data-i18n="hero.cardTitle">Latest activity</h2>
+          <p data-i18n="hero.cardBody">
+            Admins can add posts and manage leadership updates directly from the admin dashboard.
+          </p>
+          <span class="pill" data-i18n="hero.adminsLabel">Active admins</span>
+          <div class="list" id="adminList"></div>
+        </div>
+      </section>
+
+      <section class="posts">
+        <h2 class="section-title" data-i18n="posts.title">Recent posts</h2>
+        <div class="post-grid" id="postGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/logo.svg" alt="SPG logo" />
+            <p data-i18n="footer.description">
+              A modern hub for your service portal, connecting teams with clear updates.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.company">Company</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.about">About</a></li>
+              <li><a href="#" data-i18n="footer.careers">Careers</a></li>
+              <li><a href="#" data-i18n="footer.press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.resources">Resources</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="#" data-i18n="footer.guides">Guides</a></li>
+              <li><a href="#" data-i18n="footer.support">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.legal">Legal</h4>
+            <ul>
+              <li><a href="#" data-i18n="footer.privacy">Privacy</a></li>
+              <li><a href="#" data-i18n="footer.terms">Terms</a></li>
+              <li><a href="#" data-i18n="footer.security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copy">© 2024 SPG Portal. All rights reserved.</span>
+          <span data-i18n="footer.contact">hello@spg-portal.com</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
