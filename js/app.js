@@ -2,6 +2,30 @@ const translations = {
   en: {
     nav: {
       home: "Home",
+      news: "News",
+      about: "About us",
+      aboutHistory: "History",
+      aboutMission: "Mission",
+      aboutVision: "Vision",
+      aboutStructure: "Structure",
+      aboutCareer: "Career growth plan",
+      aboutMessage: "Director's message",
+      team: "Team",
+      teamPr: "PR & Event",
+      teamAparati: "Administration",
+      teamParlament: "Student parliament",
+      teamGov: "Student government",
+      contact: "Contact",
+    },
+    topbar: {
+      phone: "📞 +995 591 037 047",
+      email: "✉️ info@spg.ge",
+      address: "📍 35-37 Zhiuli Shartava St, Tbilisi",
+    },
+    header: {
+      signin: "🔐 Sign in",
+      contactCta: "Contact us",
+      registerCta: "Register",
       services: "Services",
       community: "Community",
       admin: "Admin",
@@ -54,6 +78,30 @@ const translations = {
   ka: {
     nav: {
       home: "მთავარი",
+      news: "სიახლეები",
+      about: "ჩვენს შესახებ",
+      aboutHistory: "ისტორია",
+      aboutMission: "მისია",
+      aboutVision: "ხედვა",
+      aboutStructure: "სტრუქტურა",
+      aboutCareer: "კარიერული განვითარების გეგმა",
+      aboutMessage: "ხელმძღვანელის მიმართვა",
+      team: "გუნდი",
+      teamPr: "PR & EVENT",
+      teamAparati: "აპარატი",
+      teamParlament: "სტუდენტური პარლამენტი",
+      teamGov: "სტუდენტური მთავრობა",
+      contact: "კონტაქტი",
+    },
+    topbar: {
+      phone: "📞 +995 591 037 047",
+      email: "✉️ info@spg.ge",
+      address: "📍 ჟიულ შარტავას 35-37, თბილისი",
+    },
+    header: {
+      signin: "🔐 Sign in",
+      contactCta: "მოგვწერე",
+      registerCta: "რეგისტრაცია",
       services: "სერვისები",
       community: "საზოგადოება",
       admin: "ადმინი",
@@ -111,6 +159,13 @@ const STORAGE_KEYS = {
   language: "spg.language",
 };
 
+const languageButtons = document.querySelectorAll("[data-lang]");
+const adminList = document.getElementById("adminList");
+const postGrid = document.getElementById("postGrid");
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobile");
+const drops = Array.from(document.querySelectorAll(".drop"));
+const header = document.getElementById("siteHeader");
 const languageToggle = document.getElementById("languageToggle");
 const adminList = document.getElementById("adminList");
 const postGrid = document.getElementById("postGrid");
@@ -151,6 +206,10 @@ const setLanguage = (lang) => {
   });
 
   localStorage.setItem(STORAGE_KEYS.language, lang);
+
+  languageButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.lang === lang);
+  });
 };
 
 const renderAdmins = (lang) => {
@@ -211,6 +270,45 @@ const initialize = () => {
   renderAdmins(initialLang);
   renderPosts(initialLang);
 };
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const next = button.dataset.lang || "en";
+    setLanguage(next);
+    renderAdmins(next);
+    renderPosts(next);
+  });
+});
+
+burger?.addEventListener("click", () => {
+  mobileMenu?.classList.toggle("open");
+});
+
+drops.forEach((drop) => {
+  const button = drop.querySelector("button");
+  button?.addEventListener("click", (event) => {
+    event.preventDefault();
+    drops.forEach((item) => item !== drop && item.classList.remove("open"));
+    drop.classList.toggle("open");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".drop")) {
+    drops.forEach((drop) => drop.classList.remove("open"));
+  }
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!header) {
+      return;
+    }
+    header.classList.toggle("shrink", window.scrollY > 40);
+  },
+  { passive: true }
+);
 
 languageToggle?.addEventListener("click", () => {
   const current = localStorage.getItem(STORAGE_KEYS.language) || "en";

@@ -7,6 +7,86 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <header class="header" id="siteHeader">
+      <div class="headerTopGlow"></div>
+
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <div class="topbar__left">
+            <span class="pill" data-i18n="topbar.phone">📞 +995 591 037 047</span>
+            <a class="pill" href="mailto:info@spg.ge" data-i18n="topbar.email">✉️ info@spg.ge</a>
+            <span class="pill" data-i18n="topbar.address">📍 ჟიულ შარტავას 35-37, თბილისი</span>
+          </div>
+
+          <div class="lang" aria-label="Language">
+            <button class="active" type="button" data-lang="ka">KA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="brandbar">
+        <div class="container brandbar__inner">
+          <div class="leftActions">
+            <a class="btn signin" href="main.html#signin" data-i18n="header.signin">🔐 Sign in</a>
+          </div>
+
+          <a class="brand" href="main.html#home" aria-label="Home">
+            <img class="logoImg" src="assets/logo.svg" alt="SPG Logo" />
+          </a>
+
+          <div class="actions">
+            <a class="btn ghost" href="main.html#contact" data-i18n="header.contactCta">მოგვწერე</a>
+            <a class="btn primary" href="main.html#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+            <button class="btn burger" id="burger" type="button" aria-label="Open menu">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <div class="container navbar__inner">
+          <nav class="nav" aria-label="Main">
+            <a class="active" href="main.html#home" data-i18n="nav.home">მთავარი</a>
+            <a href="main.html#news" data-i18n="nav.news">სიახლეები</a>
+
+            <div class="drop" data-drop="about">
+              <button type="button">
+                <span data-i18n="nav.about">ჩვენს შესახებ</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="main.html#about-history" data-i18n="nav.aboutHistory">ისტორია</a>
+                <a href="main.html#about-mission" data-i18n="nav.aboutMission">მისია</a>
+                <a href="main.html#about-vision" data-i18n="nav.aboutVision">ხედვა</a>
+                <a href="main.html#about-structure" data-i18n="nav.aboutStructure">სტრუქტურა</a>
+                <a href="main.html#about-career" data-i18n="nav.aboutCareer">კარიერული განვითარების გეგმა</a>
+                <a href="main.html#about-message" data-i18n="nav.aboutMessage">ხელმძღვანელის მიმართვა</a>
+              </div>
+            </div>
+
+            <div class="drop" data-drop="team">
+              <button type="button">
+                <span data-i18n="nav.team">გუნდი</span> <span class="caret">▾</span>
+              </button>
+              <div class="menu" role="menu">
+                <a href="main.html#team-pr" data-i18n="nav.teamPr">PR &amp; EVENT</a>
+                <a href="main.html#team-aparati" data-i18n="nav.teamAparati">აპარატი</a>
+                <a href="main.html#team-parlament" data-i18n="nav.teamParlament">სტუდენტური პარლამენტი</a>
+                <a href="main.html#team-gov" data-i18n="nav.teamGov">სტუდენტური მთავრობა</a>
+              </div>
+            </div>
+
+            <a href="main.html#contact" data-i18n="nav.contact">კონტაქტი</a>
+          </nav>
+        </div>
+
+        <div class="container mobile" id="mobile">
+          <a href="main.html#home" data-i18n="nav.home">მთავარი</a>
+          <a href="main.html#news" data-i18n="nav.news">სიახლეები</a>
+          <a href="main.html#about-history" data-i18n="nav.about">ჩვენს შესახებ</a>
+          <a href="main.html#team-pr" data-i18n="nav.team">გუნდი</a>
+          <a href="main.html#contact" data-i18n="nav.contact">კონტაქტი</a>
+          <a href="main.html#register" data-i18n="header.registerCta">რეგისტრაცია</a>
+          <a href="main.html#signin" data-i18n="header.signin">Sign in</a>
     <header>
       <div class="container navbar">
         <img src="assets/logo.svg" alt="SPG logo" />
